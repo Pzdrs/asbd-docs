@@ -9,7 +9,7 @@ At the top of the hierarchy stands the `MenuItem` class. It is an abstract class
 
 A menu item can be enabled or disabled using the `enabled` property. By default, all menu items are enabled.
 
-The `MenuItem` class is a `StyleableComponent` and as such, using the `custom_css` property, it is possible to apply custom CSS classes to the menu item. More information about styling can be found on the [Styling](/shared-library/styleable-components/) page.
+The `MenuItem` class is a `StyleableComponent` and as such, using the `custom_css` property, it is possible to apply custom CSS classes to the menu item. More information about styling can be found on the [Styling](../styleable-components/index.md) page.
 
 The following sections describe the concrete menu item classes.
 

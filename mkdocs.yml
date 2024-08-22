@@ -47,9 +47,11 @@ theme:
     - navigation.sections
     - navigation.indexes
 nav:
-  - "Shared Library":
+  - Home: index.md
+  - Shared Library:
     - View menu:
       - shared-library/view-menu/index.md
       - Menu items: shared-library/view-menu/menu-items.md
-    - "Styleable components":
+      - Examples: shared-library/view-menu/examples.md
+    - Styleable components:
       - shared-library/styleable-components/index.md
