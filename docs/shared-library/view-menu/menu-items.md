@@ -104,6 +104,13 @@ SpacerMenuItem(3)
 
 ## SectionTitle
 
+Because we might want to split menus into different sections, the `SectionTitle` class is used to create a section title. It renders as a `<b>` tag.
+
+```Python
+# Renders as <b>Section title</b>
+SectionTitle('Section title')
+```
+
 ## CollapsibleSectionToggle
 
 ## CollapsibleSection
