@@ -111,12 +111,6 @@ Because we might want to split menus into different sections, the `SectionTitle`
 SectionTitle('Section title')
 ```
 
-## CollapsibleSectionToggle
-
-## CollapsibleSection
-
-## Conditional
-
 ## Filters
 
 Filters usually come in handy in listing views. A filter is a list of links that simply add a query parameter to the URL and the server uses that to filter the results.
@@ -221,6 +215,41 @@ Conditional(condition, menu_item1, menu_item2).otherwise(menu_item3, menu_item4)
     The `otherwise()` function does not take any conditionals. It is assumed that if the condition is not met, the menu items passed to the `otherwise()` function will be enabled.
 
 ## Collapsibles
+
+The menu system has support for collapsible sections. It is a way to group menu items together and hide them behind a toggle button.
+
+### Toggle button/link
+
+```Python
+toggle = CollapsibleSectionTitle('Sestavy', 'sestavyCollapse') # (1)!
+# or
+toggle = CollapsibleSectionToggle('Sestavy', 'sestavyCollapse') # (2)!
+```
+
+1. The title of the collapsible section.
+2. Just a simple link that toggles the collapsible section.
+
+### CollapsibleSection
+
+```Python
+section = CollapsibleSection(
+    'sestavyCollapse', # (1)!
+    LinkMenuItem('Sestava jednotky', 'byty:sestava-byty', query_params=query),
+    LinkMenuItem('Sestava služby', 'sluzby:sestava-sluzby', query_params=query),
+    LinkMenuItem('Sestava kategorie zálohy', 'sluzby:sestava-kategorie-zaloh',
+                 query_params=query),
+    LinkMenuItem('Sestava definice záloh', 'sluzby:sestava-zalohy-definice',
+                 query_params=query),
+    LinkMenuItem('Sestava platby záloh', 'sluzby:sestava-zalohy-platby',
+                 query_params=query),
+    LinkMenuItem('Sestava odečty', 'sluzby:sestava-odecty', query_params=query),
+    LinkMenuItem('Sestava faktury', 'sluzby:sestava-faktury', query_params=query),
+    LinkMenuItem('Sestava vlastníci', 'byty:sestava-byty-vlastnici', query_params=query),
+    LinkMenuItem('Sestava nájemníci', 'byty:sestava-byty-najemnici', query_params=query),
+)
+```
+
+1. The `collapse_id`. Must match with the `collapse_id` of the toggle button.
 
 ## Creating a custom menu item
 
