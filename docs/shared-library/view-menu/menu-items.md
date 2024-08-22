@@ -117,9 +117,62 @@ SectionTitle('Section title')
 
 ## Conditional
 
-:  Described in it's own dedicated [section](#filters).
-
 ## Filters
+
+Filters usually come in handy in listing views. A filter is a list of links that simply add a query parameter to the URL and the server uses that to filter the results.
+
+The `Filter` class expects 3 arguments:
+
+`request`
+
+:   The request object. 
+
+    Mainly used to check if the filter has been applied, if so, the filter is not rendered.
+
+`queryset`
+
+:   The list of objects that can be used for filtering.
+
+`query_parameter`
+
+:   The name of the query parameter that will be added to the URL.
+
+```Python title="Basic usage"
+Filter(request, queryset, 'filter')
+```
+
+Each object is rendered as a link. The actual link label is by default the string representation of the object. If the object is a model instance, the `__str__` method is used. It is possible to pass in a callable `display_name` argument.
+
+```Python title="Custom display name"
+Filter(request, queryset, 'filter', display_name=lambda obj: obj.name)
+```
+
+The filter is rendered as a underscored heading and a list of links. The heading is by default 'Filtry zobrazení' but can be changed with the `title` property.
+
+### Extending the base class
+
+```Python title="DumFilter"
+class DumFilter(Filters):
+    def __init__(self, request: HttpRequest, queryset: QuerySet = None, 
+                 title: str = None, hide: bool = True, enabled: bool = True,
+                 custom_css: StyleModifier = None) -> None:
+        super().__init__(request, queryset or Domy.objects.account_can_see(request.user), 'referraldumid',
+                         lambda dum: dum.display_altername_or_street_name, title, hide, enabled,
+                         custom_css)
+```
+
+This filter by default, if no queryset was provided, uses the `Domy` model and gets all the objects the current user has access to. 
+
+The `query_parameter` is set to `referraldumid`.
+
+And lastly, the `display_name` is set to a lambda function that returns the `display_altername_or_street_name` property of the `Dum` model instance.
+
+```Python title="Usage"
+# The simplest way to use this filter
+DumFilter(request)
+# Using a custom queryset
+DumFilter(request, Domy.objects.all())
+```
 
 ## Conditionals
 
