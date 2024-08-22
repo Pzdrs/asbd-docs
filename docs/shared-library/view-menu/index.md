@@ -72,6 +72,8 @@ In case of ASBD, the `asbd_application_base_template.html` takes care of this an
 
 ## Examples
 
+### An empty menu
+
 As an example, let's take the `SluzbyDefiniceListingSearchView` view from the `sluzby` application. The class is stripped of anything that is not relevant to the menu system so as not to clutter the example.
 
 ```Python title="sluzby/views.py"
@@ -98,6 +100,47 @@ The view class has all three menu functions implemented. All of them simply retu
     The function must return a `ViewMenu` object. If the function returns `None`, the menu will not be rendered.
 
 ![alt text](<all_views_empty.png>)
+
+As we can see, the view has all three menus rendered but they are empty (well, relatively empty - more on this further down). The `ViewMenu` object has several defaults:
+
+If no menu title is provided, it defaults to 'Dostupné akce...'
+
+Furthermore, a menu is rendered using a template. The default template to be used is the `default_view_menu_template.html`. Even though a specific template can be provided, it is not necessary in most cases.
+
+```HTML title="snippets/default_view_menu_template.html"
+{% load static %}
+
+<!-- KONTEXTOVE ACTION MENU -->
+<div class='container-fluid mb-2'>
+    <!-- ZOBRAZ HLAVICKU -->
+    <div class='row mt-2 mb-2'>
+        <div class='col-12'>
+            <b>{{ title }}</b>
+        </div>
+    </div>
+    <!-- LINK LIST -->
+    {% for menu_item in menu_items %}
+        {% if menu_item.enabled %}
+            <div class='row'>
+                <div class='col-12'>
+                    {{ menu_item.html|safe }}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+```
+
+Lastly, every `ViewMenu` has a default set of items that are prepended to the menu by default. In case we wanted to omit them, we can set the `default_items` parameter to `False`.
+
+```Python title="Default items"
+__default_items = [
+    LinkMenuItem('Krok zpět...', 'javascript:window.history.back()', reversible=False),
+    SpacerMenuItem()
+]
+```
+
+### A bit more capable menu
 
 Let's now focus on creating an actual useful menu (we will stick with the right menu only). We have the following requirements:
 
