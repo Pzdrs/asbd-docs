@@ -176,6 +176,50 @@ DumFilter(request, Domy.objects.all())
 
 ## Conditionals
 
+As we discussed, every menu item has to possibility of being disabled. This behavior is controlled by the `enabled` property. If we have a bunch of menu items that need to be hidden given a common condition, adding that condition to each menu item is not very efficient. Instead, we can use the `Conditional` class.
+
+The `Conditional` class expects is just a wrapper for multiple menu items that is given a condition and based on its result, it enables or disables all the menu items it wraps around.
+
+```Python title="Basic usage" hl_lines="15-22"
+ViewMenu(
+    VsechnyJednotky(),
+    SpacerMenuItem(enabled=self.referral_dum is not None),
+    CreateLink(
+        'byty:byty-create',
+        query_params={'referraldumid': referraldumid},
+        enabled=self.referral_dum is not None
+    ),
+    SpacerMenuItem(),
+    DumFilters(self.request, Domy.objects.account_can_see(self.request.user))
+)
+# vs
+ViewMenu(
+    VsechnyJednotky(),
+    Conditional(
+        self.referral_dum is not None, # (1)!
+        SpacerMenuItem(),
+        CreateLink(
+            'byty:byty-create',
+            query_params={'referraldumid': referraldumid}
+        )
+    ),
+    SpacerMenuItem(),
+    DumFilters(self.request, Domy.objects.account_can_see(self.request.user))
+)
+```
+
+1. The condition that needs to be met for the menu items to be enabled.
+
+The `Conditional` class also has a `otherwise()` function that takes in a list of menu items that will be enabled if the condition is not met.
+
+```Python title="Using otherwise"
+Conditional(condition, menu_item1, menu_item2).otherwise(menu_item3, menu_item4)
+```
+
+!!! warning "No conditionals in `otherwise()`"
+
+    The `otherwise()` function does not take any conditionals. It is assumed that if the condition is not met, the menu items passed to the `otherwise()` function will be enabled.
+
 ## Collapsibles
 
 ## Creating a custom menu item
