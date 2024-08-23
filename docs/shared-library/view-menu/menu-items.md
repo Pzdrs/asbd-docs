@@ -24,11 +24,11 @@ LinkMenuItem('Link label', 'app:view')
 LinkMenuItem('Link label', '/some/url', reversible=False)
 ```
 
-A set of **get** and **query** parameters can be passed to the link using the `get_params` and `query_params` arguments. Note that both arguments can be used at the same time.
+A set of **path** and **query** parameters can be passed to the link using the `path_params` and `query_params` arguments. Note that both arguments can be used at the same time.
 
 ```Python title="Get and query parameters"
 # Given the URL definition 'view/<int:pk>/', the url will be 'view/1/'
-LinkMenuItem('Link label', 'app:view', get_params={'pk': '1'})
+LinkMenuItem('Link label', 'app:view', path_params={'pk': '1'})
 # Results in /app/view/?param1=value1
 LinkMenuItem('Link label', 'app:view', query_params={'param1': 'value1'})
 ```
