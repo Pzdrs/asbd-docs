@@ -87,9 +87,21 @@ The raw use of the `ObjectRelatedLink` class on its own is not very helpful, so 
 
 The label defaults to 'Upravit'.
 
+```Python
+LinkMenuItem('Upravit', 'app:view', query_params={'pk': self.object.pk})
+# vs
+UpdateLink('app:view', self.object.pk)
+```
+
 #### DeleteLink
 
 The label defaults to 'Vymazat' and a danger class is applied to the link.
+
+```Python
+LinkMenuItem('Vymazat', 'app:view', query_params={'pk': self.object.pk}, custom_css=StyleModifier(('text-danger',)))
+# vs
+DeleteLink('app:view', self.object.pk)
+```
 
 ## SpacerMenuItem
 
@@ -204,15 +216,26 @@ ViewMenu(
 
 1. The condition that needs to be met for the menu items to be enabled.
 
-The `Conditional` class also has a `otherwise()` function that takes in a list of menu items that will be enabled if the condition is not met.
+### Otherwise
 
-```Python title="Using otherwise"
-Conditional(condition, menu_item1, menu_item2).otherwise(menu_item3, menu_item4)
-```
+The `Conditional` class also has a `otherwise()` function that takes in a list of menu items that will be enabled if the condition **is not** met.
 
 !!! warning "No conditionals in `otherwise()`"
 
     The `otherwise()` function does not take any conditionals. It is assumed that if the condition is not met, the menu items passed to the `otherwise()` function will be enabled.
+
+As an example, let's say if the `referraldumid` query parameter is present, we want to show a link to a listing view of objects related to that query parameter and a create view which we will pass the parameter to so it can be pre-filled. If the parameter is not present, we just want to show a generic create view.
+
+```Python title="Using otherwise"
+Conditional(
+    self.referral_dum,
+    VsechnyKategorieFaktur(),
+    SpacerMenuItem(),
+    PridatKategoriiFaktur(query_params=self.query_params)
+).otherwise(
+    PridatKategoriiFaktur(),
+)
+```
 
 ## Collapsibles
 

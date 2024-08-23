@@ -45,3 +45,24 @@ The `StyleModifier` also has an extension functionality, which allows for combin
 ```Python title="Combining style modifiers"
 StyleModifier(styles={'text-align': 'right'}).extend(StyleModifier(('class1',)))
 ```
+
+## An example
+
+```Python title="View"
+def get_context_data(self):
+    return {
+        'style': StyleModifier(('class1', 'class2'), {'color':'blue'}),
+        **super().get_context_data()
+    }
+```
+
+
+```HTML title="Template"
+<div {{ style.get_class_attribute() }} {{ style.get_style_attribute() }}>Hello, world!</div>
+<!-- or use the convenient concatenation -->
+<div {{ style.get_attributes() }}>Hello, world!</div>
+```
+
+```HTML title="Result"
+<div class="class1 class2" style="color: blue;">Hello, world!</div>
+```

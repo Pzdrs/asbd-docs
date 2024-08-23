@@ -69,3 +69,60 @@ A custom template tag is used to render the menus.
 ```
 
 In case of ASBD, the `asbd_application_base_template.html` takes care of this and is also prepared to handle three menu positions.
+
+## Defaults
+
+The `ViewMenu` object has several defaults.
+
+If no menu title is provided, it defaults to 'Dostupné akce...'
+
+Furthermore, a menu is rendered using a template. The default template to be used is the `default_view_menu_template.html`. Even though a specific template can be provided, it is not necessary in most cases.
+
+```HTML title="snippets/default_view_menu_template.html"
+{% load static %}
+
+<!-- KONTEXTOVE ACTION MENU -->
+<div class='container-fluid mb-2'>
+    <!-- ZOBRAZ HLAVICKU -->
+    <div class='row mt-2 mb-2'>
+        <div class='col-12'>
+            <b>{{ title }}</b>
+        </div>
+    </div>
+    <!-- LINK LIST -->
+    {% for menu_item in menu_items %}
+        {% if menu_item.enabled %}
+            <div class='row'>
+                <div class='col-12'>
+                    {{ menu_item.html|safe }}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+```
+
+Lastly, every `ViewMenu` has a default set of items that are prepended to the menu by default. In case we wanted to omit them, we can set the `default_items` parameter to `False`. The property itself is private so it cannot be overriden, just enabled or disabled.
+
+In the code block below we can see the `ViewMenu` default properties mentioned above.
+
+```Python title="ViewMenu"
+class ViewMenu:
+    __default_menu_title = 'Dostupné akce...'
+    __default_menu_template = 'snippets/default_view_menu_template.html'
+    __default_items = [
+        LinkMenuItem('Krok zpět...', 'javascript:window.history.back()', reversible=False),
+        SpacerMenuItem()
+    ]
+```
+
+The simplest menu possible is simply just an instance of the `ViewMenu` class as shown below.
+
+```Python title="Empty menu"
+def get_right_menu(self):
+    return ViewMenu()
+```
+
+The code above will result in an empty menu with the defaults applied as shown in the image below.
+
+![alt text](menu_defaults.png)
