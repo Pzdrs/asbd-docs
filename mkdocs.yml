@@ -1,4 +1,4 @@
-site_name: ASBD internal documentation
+site_name: Shared Library Documentation
 
 markdown_extensions:
   - admonition
@@ -48,10 +48,12 @@ theme:
     - navigation.indexes
 nav:
   - Home: index.md
-  - Shared Library:
-    - View menu:
-      - shared-library/view-menu/index.md
-      - Menu items: shared-library/view-menu/menu-items.md
-      - Examples: shared-library/view-menu/examples.md
-    - Styleable components:
-      - shared-library/styleable-components/index.md
+  - View menu:
+    - view-menu/index.md
+    - Menu items: view-menu/menu-items.md
+    - Examples: view-menu/examples.md
+  - Styleable components:
+    - styleable-components/index.md
+  - Reports:
+    - reports/index.md
+    - ReportView: reports/report-view.md

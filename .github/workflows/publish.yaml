@@ -1,8 +1,8 @@
 name: Publish docs via GitHub Pages
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+    # paths: [ docs/ ] priprava na vlckovo repo
 
 jobs:
   build:
@@ -11,6 +11,11 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
+
+      - name: Lint MD
+        uses: docker://avtodev/markdown-lint:v1
+        with:
+          args: "**/*.md"
 
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
