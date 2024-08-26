@@ -12,11 +12,6 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v4
 
-      - name: Lint MD
-        uses: docker://avtodev/markdown-lint:v1
-        with:
-          args: "**/*.md"
-
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:

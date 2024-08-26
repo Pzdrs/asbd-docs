@@ -15,7 +15,7 @@ At the heart of every report lies the `ReportView` class. It holds the following
 
 :   The headline of the report page.
 
-<img src="/reports/headline.png" style="border: 1px solid lightgray">
+<img src="/reports/headline.png" style="border: 1px solid lightgray" alt="Headling example">
 
 `tables`
 
@@ -154,11 +154,12 @@ In this case, we couldn't have used the `table_after_other` block because the pa
     {% endif %}
 {% endblock %}
 ```
+
 ## Extending the base view
 
 The base `ReportView` may be extended to abstract out common functionality. The most common example is the `DumReportView` class, which is specifically tailored for reports that are in some way tied to a single `Dum` or `Byt`.
 
-As far as the report system goes, the `DumReportView` just automates the process of setting a headline. 
+As far as the report system goes, the `DumReportView` just automates the process of setting a headline.
 
 ```Python title="The headline logic in the DumReportView class"
 def get_report_headline(self):
