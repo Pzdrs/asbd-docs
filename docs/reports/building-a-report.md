@@ -20,7 +20,7 @@ class MyReportView(ReportView):
     tables = [] # So we can see the complete barebones report
 ```
 
-<img src="/reports/empty_report.png" style="border: 1px solid lightgray" alt="An empty report">
+![An empty report](empty_report.png)
 
 At this stage, our report isn't very useful. Before we get into building tables, we need to familiarize ourselves with the basic building blocks.
 
@@ -236,4 +236,4 @@ class MyReportView(ReportView):
 
         return [truth_table]
 ```
-<img src="/reports/truth_table.png" style="border: 1px solid lightgray" alt="Truth table example">
+![Truth table example](truth_table.png)

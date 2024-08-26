@@ -15,7 +15,7 @@ At the heart of every report lies the `ReportView` class. It holds the following
 
 :   The headline of the report page.
 
-<img src="/reports/headline.png" style="border: 1px solid lightgray" alt="Headling example">
+![Heading example](headline.png)
 
 `tables`
 
