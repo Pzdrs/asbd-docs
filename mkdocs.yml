@@ -57,4 +57,5 @@ nav:
   - Reports:
     - reports/index.md
     - ReportView: reports/report-view.md
+    - Building blocks: reports/building-blocks.md
     - Building a report: reports/building-a-report.md
