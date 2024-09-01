@@ -101,8 +101,8 @@ CurrencyCell(69420) # -> 69 420,00 Kč
 
 ```Python title="Prefix and suffix"
 CurrencyCell(1000, prefix='(-)') # -> (-) 1 000,00 Kč
-CurrencyCell(1000, suffix=' //') # -> 1 000,00 Kč //
-CurrencyCell(1000, prefix='(-)', suffix=' //') # -> (-) 1 000,00 Kč //
+CurrencyCell(1000, suffix=' (+)') # -> 1 000,00 Kč (+)
+CurrencyCell(1000, prefix='(-)', suffix=' (+)') # -> (-) 1 000,00 Kč (+)
 ```
 
 Under the hood, Babel is used for formatting. The function call to `format_currency()` used by `CurrencyCell` can be seen below.
@@ -116,6 +116,8 @@ babel.numbers.format_currency(value, "CZK", format=u"#,##0.00 ¤", locale="cs_CZ
 Expects a number.
 
 A custom format can be passed in using `custom_format`.
+
+The Babel library is used for formatting. More on formatting string [here](https://babel.pocoo.org/en/latest/numbers.html).
 
 ```Python
 ReportTableCell('42.000')
