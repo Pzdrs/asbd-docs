@@ -75,7 +75,7 @@ The columns required are the following:
 - Podíl
 - Počet osob
 - Volitelné služby
-- Částka předepsaných záloh
+- Předpis záloh
 
 ```Python
 class SestavaByty(DumReportView): # (1)!

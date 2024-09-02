@@ -9,6 +9,11 @@ All tables are constructed from several basic building blocks that are comprehen
 
 The cell is the smallest building block within a table. It has two main properties:
 
+```Python
+def __init__(self, value=None, default_value='-', custom_css=None) -> None:
+    ...
+```
+
 `value`
 
 :   Value to be rendered inside of the cell
@@ -43,6 +48,11 @@ Expects a boolean value.
 
 Based on the `true` and `false` arguments, the boolean value is translated.
 
+```Python
+def __init__(self, value, true='ANO', false='NE', default_value='-', custom_css=None) -> None:
+    ... 
+```
+
 The default translation:
 
 | Value | Translation |
@@ -63,7 +73,12 @@ Expects a value of type `datetime.date`.
 
 Formats the date to a specified format.
 
-Defaults to '*%d.%m.%Y*'.
+```Python
+def __init__(self, value, _format='%d.%m.%Y', default_value='-', custom_css=None) -> None:
+    ...
+```
+
+The date format defaults to '*%d.%m.%Y*'.
 
 ```Python
 ReportTableCell(datetime.date(1, 1, 2024).strftime('%d.%m.%Y'))
@@ -132,6 +147,11 @@ A row is just a collection of cells.
 Similarly as `ReportTableCell`, it accepts a `StyleModifier`.
 
 ```Python
+def __init__(self, cells, custom_css=None) -> None:
+    ...
+```
+
+```Python
 ReportTableRow((
     ReportTableCell('1'),
     ReportTableCell('2'),
@@ -142,6 +162,23 @@ ReportTableRow((
 ## ReportTable
 
 At last, we arrive at the top level building block - the `ReportTable`. Every table in a report corresponds to an instance of this class.
+
+```Python
+def __init__(self, columns: Iterable[str | ReportTableCell] = None,
+                heading: str = None, info: str = None,
+                extra_data: dict = None,
+                custom_css: StyleModifier = None) -> None:
+    self.custom_css = custom_css or StyleModifier()
+    if columns:
+        self.columns = tuple(
+            map(lambda column: column if isinstance(column, ReportTableCell) else ReportTableCell(column),
+                columns))
+    self.heading = heading
+    self.extra_data = {} if extra_data is None else extra_data
+    self.info = info
+    self.rows = []
+    self.translations = {}
+```
 
 The class properties are the following:
 
@@ -181,6 +218,26 @@ The class properties are the following:
 
 ```Python
 ReportTable(('column 1', 'column 2'), 'heading', 'info text', {'key':'val'})
+```
+
+There are two ways of adding rows to tables - **explicit** and **implicit**.
+
+```Python title="Explicit function"
+table = ReportTable()
+# Takes in a row object
+table.add_row_expl(ReportTableRow.of(
+    ReportTableCell(),
+    ...
+))
+```
+
+```Python title="Implicit function"
+table = ReportTable()
+# Takes in an arbitrary amount of cell objects
+table.add_row_impl(
+    ReportTableCell(),
+    ...
+)
 ```
 
 ### HeadlessReportTable
