@@ -59,3 +59,5 @@ nav:
     - ReportView: reports/report-view.md
     - Building blocks: reports/building-blocks.md
     - Building reports: reports/building-reports.md
+  - Miscellaneous:
+    - ViewTemplateConfiguration: misc/view-template-configuration.md 
