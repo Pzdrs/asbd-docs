@@ -39,7 +39,7 @@ As we can see, we can alter the view's **context**, **class parameters** and the
 
 The database record can of course be manually modified from the admin interface. Occasionally though, the users themselves need to be able to modify a view's context for whatever reason. This is where the context configuration view comes in.
 
-The configuration view can be accessed at `/common/configure-context/`. It expects an app name and a view name separated by a colon (**:**) - the same the `reverse()` function is used (i.e. `reverse('app:view_name')`).
+The configuration view can be accessed at `/common/configure-view/`. It expects an app name and a view name separated by a colon (**:**) - the same the `reverse()` function is used (i.e. `reverse('app:view_name')`).
 
 !!! example "Accessing a configuration view"
     We have a view defined in `urls.py` like so:
@@ -47,7 +47,7 @@ The configuration view can be accessed at `/common/configure-context/`. It expec
     app_name = 'byty'
     path('sestavabytyvlastnici/', SestavaBytyVlastnici.as_view(), name='sestava-byty-vlastnici')
     ```
-    The URL to the configuration view for this particular view will be `/common/configure-context/byty:sestava-byty-vlastnici'`.
+    The URL to the configuration view for this particular view will be `/common/configure-view/byty:sestava-byty-vlastnici'`.
 
 ### Requirements
 
@@ -87,3 +87,25 @@ This dictionary pretty much describes what the configuration form will look like
 ![Configuration form](view-template-configuration-form.png)
 
 Note that the `name` values will be used as keys in the database - a context parameter defined here will be available in the global context in a template under the same name.
+
+### Tags
+
+An optional feature of the configuration front-end is the tags system. A list of tags can be added into the `user_configurables` dictionary like so:
+
+```Python
+user_configurables = {
+    'tags': ['report'],
+    "extra_context": [
+        {
+            'name': 'contact_email',
+            'label': 'Kontaktní e-mail',
+            'placeholder': 'Např. info@asbd.cz',
+        }
+    ]
+}
+```
+
+When navigating to `/common/configure-view`, links to all configurable views are displayed. If we add a `?tags` query parameter into the URL, we can direct which links are displayed.
+
+!!! example "The usage of tags"
+    We have defined in our `user_configurables` the following tags - *report*, *ucetni*. If we navigate to `/common/configure-view/?tags=report`, only views tagged with the `report` tag are displayed. If no tags are defined in the url, all views are displayed.
