@@ -5,15 +5,24 @@ description: Inline Menu Items
 
 An **inline menu** is a colection of links, typically renered as icon buttons. These can be found in pretty much every listing page throughout the application.
 
-Every object, with exceptions of course, has a **detail**, **update** and **delete** views associated with them. For that reason there are usually three icons (inline menu items) for each object in a listing page (as can be observed on the image below).
-
-![Example](example_menu_items.png)
-
 As of the time of writing this (September 2024), the `inline_menu_item.py` defines the following three template tags:
+
+`inline_menu_icon`
+:   Links rendered as icons
+
+`inline_menu_item`
+:   Links rendered as normal links. **Deprecated**
+
+`inline_menu_item_new`
+:   A replacement of the deprecated `inline_menu_item`   
 
 ### Inline Menu Icon
 
 The most widely used tag for inline menu items. The link is rendered as an icon for a better UX experience.
+
+Every object, with exceptions of course, has a **detail**, **update** and **delete** views associated with them. For that reason there are usually three icons (inline menu items) for each object in a listing page (as can be observed on the image below).
+
+![Example icons](example_menu_icons.png)
 
 ```Python title="Function signature"
 def inline_menu_icon(icon_type, url_address, tooltip=None, **kwargs):
@@ -68,4 +77,40 @@ The only mandatory parameters are the `url_address` and `icon_type`.
 
 # Red delete icon (bi bi-trash-fill) with the link /najemnijednotky/bytydelete/1/?sourcecaller=L&referraldumid=1
 {% inline_menu_icon 'delete' 'byty:najemnici-delete' 'Odpojit' get_pk=each.id sourcecaller='L' referraldumid=referral_dum.pk %}
+```
+
+### Inline Menu Item
+
+Inline menu items differ from their icon counterpart only in the way they are presented to the user, not as icons but as regular links (as can be seen on the image below).
+
+![Example items](example_menu_items.png)
+
+```Python title="Function signature"
+def inline_menu_item_new(link_text, url_address, style=None, **kwargs):
+    ...
+```
+
+The only mandatory parameters are the `link_text` and `url_address`.
+
+`link_text`
+:   The label of the link.
+
+`url_address`
+:   A reversible view name.
+
+    As the function accepts kwargs, **query parameters** can be passed in as regular kwargs (i.e. `query_param=value`).
+
+    As for **path parameters**, they just need a prefix of `get_` (i.e. `get_path_param=value`).
+
+`style`
+:   An optional list of classes.
+
+    Might be replaced for a `StyleModifier` in the future.
+
+```HTML title="Examples"
+# Link with the label depending on the value of "each.byt_id.variabilni" and link /najemnijednotky/pocetosoblist/?referralbytid=1
+{% inline_menu_item_new each.byt_id.variabilni 'byty:pocetosob-listing' referralbytid=each.byt_id.pk %}
+
+# Link with the label depending on the value of "each.sluzba.just_name" and link /sluzby/sluzbydefinicedetail/2/
+{% inline_menu_item_new each.sluzba.just_name 'sluzby:sluzbydefinice-detail' get_pk=each.sluzba.pk %}
 ```
