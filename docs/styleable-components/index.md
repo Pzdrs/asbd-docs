@@ -3,21 +3,6 @@ title: Styleable components
 description: Styleable components
 ---
 
-!!! note "Depracation notice"
-    Currently, styleable components use inheritance. In the future, this will be replaced with composition.
-
-    ```Python
-    class Component(StyleableComponent):
-        def __init__(self, custom_css: StyleModifier):
-            super().__init__(custom_css)
-
-    # to be replaced with composition
-
-    class Commponent:
-        def __init__(self, custom_css: StyleModifier):
-            self.custom_css = custom_css
-    ```
-
 When it comes to generating HTML in code, it is often necessary to apply CSS to the generated elements. For this reason, the shared library provides the `StyleModifier` class.
 
 The `StyleModifier` class encapsulates an arbitrary number of CSS classes and also individual CSS properties. The `get_attributes()` function can then be used to generate the HTML attributes for the element.
