@@ -1,4 +1,5 @@
 site_name: Shared Library Documentation
+dev_addr: "127.0.0.1:8001"
 
 markdown_extensions:
   - admonition
@@ -61,3 +62,4 @@ nav:
     - Building reports: reports/building-reports.md
   - Miscellaneous:
     - ViewTemplateConfiguration: misc/view-template-configuration.md 
+    - Inline Menu Items: misc/inline-menu-items.md
