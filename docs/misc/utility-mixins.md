@@ -5,6 +5,74 @@ description: Guide to the plethora
 
 ### Hotkey Mixin
 
+The `HotkeyMixin` allows us to use keyboard shortcuts in the browser using JavaScript. On the backend, we define what shortcuts do what actions and that information is handed of to the JavaScript on the frontend which takes care of detecting occurances and performing the predefined actions.
+
+Currently, a keyboard shortcut can either perform a **redirection** or **run a piece of JavaScript code**.
+
+The `HotkeyMixin` defines a singular property:
+
+`hotkeys_enabled`
+:   Allows us to enable/disable the hotkey funcionality.
+
+    Defaults to `True`.
+
+#### Usage
+
+First, we need to extend our view with the `HotkeyMixin` class and provide our hotkeys by overriding the `get_hotkeys()` function. The original implementaion returns an empty list so not overriding it will not raise any exceptions.
+
+The `get_hotkeys()` function needs to return a list of `Hotkey` instances. The `Hotkey` class itself is abstract so it's children must be used.
+
+The key combinations are represented as tuples of individual keys.
+
+```Python title="Example key combination constant"
+KATEGORIEZALOHY_LISTING_ADD_NEW_HOT_KEY = ('CTRL', 'ALT', 'N')
+```
+
+```Python
+class MyView(HotkeyMixin):
+    def get_hotkeys(self):
+        return [
+            RedirectHotkey(('ALT', 'P'), reverse('app:view_name'))
+        ]
+```
+
+#### Creating custom hotkey classes
+
+The base `Hotkey` class is abstract so it cannot be used on its own.
+
+The constructor only accepts the key combination as a tuple.
+
+Avery class extending the base `Hotkey` class must implement the `serialize()` function which will be unique to every type of hotkey.
+
+```Python title="The base class implementation"
+class Hotkey(ABC):
+    def __init__(self, combination: tuple) -> None:
+        self.combination = combination
+
+    @property
+    def serialized_combination(self) -> str:
+        return '+'.join(self.combination)
+
+    @abstractmethod
+    def serialize(self) -> tuple:
+        pass
+```
+
+The most commonly used hotkey is the `RedirectHotkey` which upon triggering simply redirects the user to a predefined page.
+
+We can see that the constructor now also accepts a link alongside the combination.
+
+The implementation of the `serialize()` function returns a tuple containing the serialized key combination and a dictionary that is specifically structured so the JavaScript on the other side knows what to do with it.
+
+```Python title="RedirectHotkey class implementation"
+class RedirectHotkey(Hotkey):
+    def __init__(self, combination: tuple, link: str) -> None:
+        super().__init__(combination)
+        self.link = link
+
+    def serialize(self) -> tuple:
+        return self.serialized_combination, {'link': self.link}
+```
 ### Auto Refresh Mixin
 
 If we have a page that needs to be refreshed constantly so the the data is also refreshed this mixin can be uitlized to achieve that goal.
