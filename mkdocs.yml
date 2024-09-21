@@ -63,3 +63,4 @@ nav:
   - Miscellaneous:
     - ViewTemplateConfiguration: misc/view-template-configuration.md 
     - Inline Menu Items: misc/inline-menu-items.md
+    - Utility Mixins: misc/utility-mixins.md
