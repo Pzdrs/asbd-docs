@@ -251,3 +251,21 @@ ReportTable((), heading="Headless table")
 # Implicit empty columns tuple
 HeadlessReportTable(heading="Headless table")
 ```
+
+### DictionaryReportTable
+
+A dictionary report table is meant to consume a dictionary and render as a two-column table. The column names have to be provided.
+
+```Python
+DictionaryReportTable(('Column 1', 'Column 2'), {})
+# or
+DictionaryReportTable(('Column 1', 'Column 2')).dictionary({})
+```
+
+### HeadlessDictionaryReportTable
+
+This table is derived from both the `HeadlessReportTable` and `DictionaryReportTable`. It renders as a table with two columns without a head row at the top of the table.
+
+```Python
+HeadlessDictionaryReportTable({})
+```
