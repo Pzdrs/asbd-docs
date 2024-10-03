@@ -1,0 +1,1552 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive guide to menu items">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../examples/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Menu items - Shared Library Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linkmenuitem" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Shared Library Documentation" class="md-header__button md-logo" aria-label="Shared Library Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Shared Library Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Menu items
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  View menu
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../styleable-components/" class="md-tabs__link">
+          
+  
+    
+  
+  Styleable components
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reports/" class="md-tabs__link">
+          
+  
+    
+  
+  Reports
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../misc/view-template-configuration/" class="md-tabs__link">
+          
+  
+    
+  
+  Miscellaneous
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Shared Library Documentation" class="md-nav__button md-logo" aria-label="Shared Library Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Shared Library Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    View menu
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            View menu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Menu items
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Menu items
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linkmenuitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkMenuItem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LinkMenuItem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#successlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      SuccessLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dangerlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      DangerLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listinglink" class="md-nav__link">
+    <span class="md-ellipsis">
+      ListingLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      CreateLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objectrelatedlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      ObjectRelatedLink
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ObjectRelatedLink">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updatelink" class="md-nav__link">
+    <span class="md-ellipsis">
+      UpdateLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deletelink" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeleteLink
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spacermenuitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      SpacerMenuItem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sectiontitle" class="md-nav__link">
+    <span class="md-ellipsis">
+      SectionTitle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extending-the-base-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extending the base class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditionals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditionals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#otherwise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Otherwise
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collapsibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collapsibles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collapsibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toggle-buttonlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toggle button/link
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collapsiblesection" class="md-nav__link">
+    <span class="md-ellipsis">
+      CollapsibleSection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-custom-menu-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a custom menu item
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../styleable-components/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Styleable components
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Styleable components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reports/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Reports
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Reports
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/report-view/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ReportView
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/building-blocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building blocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/building-reports/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building reports
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Miscellaneous
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Miscellaneous
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/view-template-configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ViewTemplateConfiguration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/inline-menu-items/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inline Menu Items
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/utility-mixins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utility Mixins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linkmenuitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkMenuItem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LinkMenuItem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#successlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      SuccessLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dangerlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      DangerLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listinglink" class="md-nav__link">
+    <span class="md-ellipsis">
+      ListingLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      CreateLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objectrelatedlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      ObjectRelatedLink
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ObjectRelatedLink">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updatelink" class="md-nav__link">
+    <span class="md-ellipsis">
+      UpdateLink
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deletelink" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeleteLink
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spacermenuitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      SpacerMenuItem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sectiontitle" class="md-nav__link">
+    <span class="md-ellipsis">
+      SectionTitle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extending-the-base-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extending the base class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditionals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditionals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#otherwise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Otherwise
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collapsibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collapsibles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collapsibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#toggle-buttonlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toggle button/link
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collapsiblesection" class="md-nav__link">
+    <span class="md-ellipsis">
+      CollapsibleSection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-custom-menu-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a custom menu item
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Menu items</h1>
+
+<p>The main building blocks of the menu system are the menu items. They are used to define the structure of the menu and can be nested to create complex menus.</p>
+<p>At the top of the hierarchy stands the <code>MenuItem</code> class. It is an abstract class that is not meant to be used directly. Instead, there are several concrete classes that inherit from it and provide actual functionality.</p>
+<p>A menu item can be enabled or disabled using the <code>enabled</code> property. By default, all menu items are enabled.</p>
+<p>The <code>MenuItem</code> class is a <code>StyleableComponent</code> and as such, using the <code>custom_css</code> property, it is possible to apply custom CSS classes to the menu item. More information about styling can be found on the <a href="../../styleable-components/">Styling</a> page.</p>
+<p>The following sections describe the concrete menu item classes.</p>
+<h2 id="linkmenuitem">LinkMenuItem</h2>
+<p>Base class for all menu items that represent a simple link.</p>
+<div class="language-Python highlight"><span class="filename">Basic usage</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># A simple link</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Link label&#39;</span><span class="p">,</span> <span class="s1">&#39;app:view&#39;</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Actual URL instead of a view name</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Link label&#39;</span><span class="p">,</span> <span class="s1">&#39;/some/url&#39;</span><span class="p">,</span> <span class="n">reversible</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<p>A set of <strong>path</strong> and <strong>query</strong> parameters can be passed to the link using the <code>path_params</code> and <code>query_params</code> arguments. Note that both arguments can be used at the same time.</p>
+<div class="language-Python highlight"><span class="filename">Get and query parameters</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Given the URL definition &#39;view/&lt;int:pk&gt;/&#39;, the url will be &#39;view/1/&#39;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Link label&#39;</span><span class="p">,</span> <span class="s1">&#39;app:view&#39;</span><span class="p">,</span> <span class="n">path_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pk&#39;</span><span class="p">:</span> <span class="s1">&#39;1&#39;</span><span class="p">})</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Results in /app/view/?param1=value1</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Link label&#39;</span><span class="p">,</span> <span class="s1">&#39;app:view&#39;</span><span class="p">,</span> <span class="n">query_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;param1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">})</span>
+</span></code></pre></div>
+<p>There are several classes that inherit from the <code>LinkMenuItem</code> class and provide additional functionality. The constructor signature is identical to the <code>LinkMenuItem</code> class.</p>
+<h3 id="successlink">SuccessLink</h3>
+<p>Adds a success class to the link.</p>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Link label&#39;</span><span class="p">,</span> <span class="s1">&#39;app:view&#39;</span><span class="p">,</span> <span class="n">custom_css</span><span class="o">=</span><span class="n">StyleModifier</span><span class="p">((</span><span class="s1">&#39;text-success&#39;</span><span class="p">,)))</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># vs</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">SuccessLink</span><span class="p">(</span><span class="s1">&#39;Link label&#39;</span><span class="p">,</span> <span class="s1">&#39;app:view&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="dangerlink">DangerLink</h3>
+<p>Adds a danger class to the link.</p>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Link label&#39;</span><span class="p">,</span> <span class="s1">&#39;app:view&#39;</span><span class="p">,</span> <span class="n">custom_css</span><span class="o">=</span><span class="n">StyleModifier</span><span class="p">((</span><span class="s1">&#39;text-danger&#39;</span><span class="p">,)))</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># vs</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">DangerLink</span><span class="p">(</span><span class="s1">&#39;Link label&#39;</span><span class="p">,</span> <span class="s1">&#39;app:view&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="listinglink">ListingLink</h3>
+<p>Sets the label to 'Všechny záznamy' by default.</p>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Všechny záznamy&#39;</span><span class="p">,</span> <span class="s1">&#39;app:view&#39;</span><span class="p">,)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># vs</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">ListingLink</span><span class="p">(</span><span class="s1">&#39;app:view&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="createlink">CreateLink</h3>
+<p>Sets the label to 'Přidat nový záznam' by default.</p>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Přidat nový záznam&#39;</span><span class="p">,</span> <span class="s1">&#39;app:view&#39;</span><span class="p">)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># vs</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">CreateLink</span><span class="p">(</span><span class="s1">&#39;app:view&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="objectrelatedlink">ObjectRelatedLink</h3>
+<p>Represents a link related to a single object, i.e. update the object, delete, view details, etc.</p>
+<p>It expects two arguments, <code>view_name</code> and <code>pk</code>. The <code>view_name</code> is the name of the view that the link points to and <code>pk</code> is the primary key of the object. The default label is 'Object link'.</p>
+<p>The raw use of the <code>ObjectRelatedLink</code> class on its own is not very helpful, so other subclasses are implemented.</p>
+<h4 id="updatelink">UpdateLink</h4>
+<p>The label defaults to 'Upravit'.</p>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Upravit&#39;</span><span class="p">,</span> <span class="s1">&#39;app:view&#39;</span><span class="p">,</span> <span class="n">query_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pk&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">pk</span><span class="p">})</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># vs</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">UpdateLink</span><span class="p">(</span><span class="s1">&#39;app:view&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="deletelink">DeleteLink</h4>
+<p>The label defaults to 'Vymazat' and a danger class is applied to the link.</p>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Vymazat&#39;</span><span class="p">,</span> <span class="s1">&#39;app:view&#39;</span><span class="p">,</span> <span class="n">query_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pk&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">pk</span><span class="p">},</span> <span class="n">custom_css</span><span class="o">=</span><span class="n">StyleModifier</span><span class="p">((</span><span class="s1">&#39;text-danger&#39;</span><span class="p">,)))</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># vs</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">DeleteLink</span><span class="p">(</span><span class="s1">&#39;app:view&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="spacermenuitem">SpacerMenuItem</h2>
+<p>A simple menu item that renders a specific number of <code>&lt;br&gt;</code> tags (<strong>1</strong> by default).</p>
+<div class="language-Python highlight"><span class="filename">Basic usage</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># A single spacer</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">SpacerMenuItem</span><span class="p">()</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># Multiple spacers</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">SpacerMenuItem</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="sectiontitle">SectionTitle</h2>
+<p>Because we might want to split menus into different sections, the <code>SectionTitle</code> class is used to create a section title. It renders as a <code>&lt;b&gt;</code> tag.</p>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Renders as &lt;b&gt;Section title&lt;/b&gt;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">SectionTitle</span><span class="p">(</span><span class="s1">&#39;Section title&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="filters">Filters</h2>
+<p>Filters usually come in handy in listing views. A filter is a list of links that simply add a query parameter to the URL and the server uses that to filter the results.</p>
+<p>The <code>Filter</code> class expects 3 arguments:</p>
+<dl>
+<dt><code>request</code></dt>
+<dd>
+<p>The request object. </p>
+<p>Mainly used to check if the filter has been applied, if so, the filter is not rendered.</p>
+</dd>
+<dt><code>queryset</code></dt>
+<dd>
+<p>The list of objects that can be used for filtering.</p>
+</dd>
+<dt><code>query_parameter</code></dt>
+<dd>
+<p>The name of the query parameter that will be added to the URL.</p>
+</dd>
+</dl>
+<div class="language-Python highlight"><span class="filename">Basic usage</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">Filter</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">queryset</span><span class="p">,</span> <span class="s1">&#39;filter&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Each object is rendered as a link. The actual link label is by default the string representation of the object. If the object is a model instance, the <code>__str__</code> method is used. It is possible to pass in a callable <code>display_name</code> argument.</p>
+<div class="language-Python highlight"><span class="filename">Custom display name</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">Filter</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">queryset</span><span class="p">,</span> <span class="s1">&#39;filter&#39;</span><span class="p">,</span> <span class="n">display_name</span><span class="o">=</span><span class="k">lambda</span> <span class="n">obj</span><span class="p">:</span> <span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</span></code></pre></div>
+<p>The filter is rendered as a underscored heading and a list of links. The heading is by default 'Filtry zobrazení' but can be changed with the <code>title</code> property.</p>
+<h3 id="extending-the-base-class">Extending the base class</h3>
+<div class="language-Python highlight"><span class="filename">DumFilter</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">class</span> <span class="nc">DumFilter</span><span class="p">(</span><span class="n">Filters</span><span class="p">):</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">HttpRequest</span><span class="p">,</span> <span class="n">queryset</span><span class="p">:</span> <span class="n">QuerySet</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>                 <span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">hide</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">enabled</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>                 <span class="n">custom_css</span><span class="p">:</span> <span class="n">StyleModifier</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">queryset</span> <span class="ow">or</span> <span class="n">Domy</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">account_can_see</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">),</span> <span class="s1">&#39;referraldumid&#39;</span><span class="p">,</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>                         <span class="k">lambda</span> <span class="n">dum</span><span class="p">:</span> <span class="n">dum</span><span class="o">.</span><span class="n">display_altername_or_street_name</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">hide</span><span class="p">,</span> <span class="n">enabled</span><span class="p">,</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>                         <span class="n">custom_css</span><span class="p">)</span>
+</span></code></pre></div>
+<p>This filter by default, if no queryset was provided, uses the <code>Domy</code> model and gets all the objects the current user has access to. </p>
+<p>The <code>query_parameter</code> is set to <code>referraldumid</code>.</p>
+<p>And lastly, the <code>display_name</code> is set to a lambda function that returns the <code>display_altername_or_street_name</code> property of the <code>Dum</code> model instance.</p>
+<div class="language-Python highlight"><span class="filename">Usage</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># The simplest way to use this filter</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">DumFilter</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1"># Using a custom queryset</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">DumFilter</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">Domy</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+</span></code></pre></div>
+<h2 id="conditionals">Conditionals</h2>
+<p>As we discussed, every menu item has to possibility of being disabled. This behavior is controlled by the <code>enabled</code> property. If we have a bunch of menu items that need to be hidden given a common condition, adding that condition to each menu item is not very efficient. Instead, we can use the <code>Conditional</code> class.</p>
+<p>The <code>Conditional</code> class expects is just a wrapper for multiple menu items that is given a condition and based on its result, it enables or disables all the menu items it wraps around.</p>
+<div class="language-Python highlight"><span class="filename">Basic usage</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">ViewMenu</span><span class="p">(</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="n">VsechnyJednotky</span><span class="p">(),</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="n">SpacerMenuItem</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">referral_dum</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">),</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="n">CreateLink</span><span class="p">(</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>        <span class="s1">&#39;byty:byty-create&#39;</span><span class="p">,</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>        <span class="n">query_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;referraldumid&#39;</span><span class="p">:</span> <span class="n">referraldumid</span><span class="p">},</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>        <span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">referral_dum</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    <span class="p">),</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="n">SpacerMenuItem</span><span class="p">(),</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    <span class="n">DumFilters</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="n">Domy</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">account_can_see</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">))</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="p">)</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="c1"># vs</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="n">ViewMenu</span><span class="p">(</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>    <span class="n">VsechnyJednotky</span><span class="p">(),</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="hll">    <span class="n">Conditional</span><span class="p">(</span>
+</span></span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">referral_dum</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="c1"># (1)!</span>
+</span></span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="hll">        <span class="n">SpacerMenuItem</span><span class="p">(),</span>
+</span></span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="hll">        <span class="n">CreateLink</span><span class="p">(</span>
+</span></span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="hll">            <span class="s1">&#39;byty:byty-create&#39;</span><span class="p">,</span>
+</span></span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="hll">            <span class="n">query_params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;referraldumid&#39;</span><span class="p">:</span> <span class="n">referraldumid</span><span class="p">}</span>
+</span></span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="hll">        <span class="p">)</span>
+</span></span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="hll">    <span class="p">),</span>
+</span></span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>    <span class="n">SpacerMenuItem</span><span class="p">(),</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>    <span class="n">DumFilters</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="n">Domy</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">account_can_see</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">))</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="p">)</span>
+</span></code></pre></div>
+<ol>
+<li>The condition that needs to be met for the menu items to be enabled.</li>
+</ol>
+<h3 id="otherwise">Otherwise</h3>
+<p>The <code>Conditional</code> class also has a <code>otherwise()</code> function that takes in a list of menu items that will be enabled if the condition <strong>is not</strong> met.</p>
+<div class="admonition warning">
+<p class="admonition-title">No conditionals in <code>otherwise()</code></p>
+<p>The <code>otherwise()</code> function does not take any conditionals. It is assumed that if the condition is not met, the menu items passed to the <code>otherwise()</code> function will be enabled.</p>
+</div>
+<p>As an example, let's say if the <code>referraldumid</code> query parameter is present, we want to show a link to a listing view of objects related to that query parameter and a create view which we will pass the parameter to so it can be pre-filled. If the parameter is not present, we just want to show a generic create view.</p>
+<div class="language-Python highlight"><span class="filename">Using otherwise</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">Conditional</span><span class="p">(</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">referral_dum</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="n">VsechnyKategorieFaktur</span><span class="p">(),</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="n">SpacerMenuItem</span><span class="p">(),</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="n">PridatKategoriiFaktur</span><span class="p">(</span><span class="n">query_params</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">query_params</span><span class="p">)</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">)</span><span class="o">.</span><span class="n">otherwise</span><span class="p">(</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    <span class="n">PridatKategoriiFaktur</span><span class="p">(),</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="collapsibles">Collapsibles</h2>
+<p>The menu system has support for collapsible sections. It is a way to group menu items together and hide them behind a toggle button.</p>
+<h3 id="toggle-buttonlink">Toggle button/link</h3>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">toggle</span> <span class="o">=</span> <span class="n">CollapsibleSectionTitle</span><span class="p">(</span><span class="s1">&#39;Sestavy&#39;</span><span class="p">,</span> <span class="s1">&#39;sestavyCollapse&#39;</span><span class="p">)</span> <span class="c1"># (1)!</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1"># or</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">toggle</span> <span class="o">=</span> <span class="n">CollapsibleSectionToggle</span><span class="p">(</span><span class="s1">&#39;Sestavy&#39;</span><span class="p">,</span> <span class="s1">&#39;sestavyCollapse&#39;</span><span class="p">)</span> <span class="c1"># (2)!</span>
+</span></code></pre></div>
+<ol>
+<li>The title of the collapsible section.</li>
+<li>Just a simple link that toggles the collapsible section.</li>
+</ol>
+<h3 id="collapsiblesection">CollapsibleSection</h3>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">section</span> <span class="o">=</span> <span class="n">CollapsibleSection</span><span class="p">(</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="s1">&#39;sestavyCollapse&#39;</span><span class="p">,</span> <span class="c1"># (1)!</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Sestava jednotky&#39;</span><span class="p">,</span> <span class="s1">&#39;byty:sestava-byty&#39;</span><span class="p">,</span> <span class="n">query_params</span><span class="o">=</span><span class="n">query</span><span class="p">),</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Sestava služby&#39;</span><span class="p">,</span> <span class="s1">&#39;sluzby:sestava-sluzby&#39;</span><span class="p">,</span> <span class="n">query_params</span><span class="o">=</span><span class="n">query</span><span class="p">),</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Sestava kategorie zálohy&#39;</span><span class="p">,</span> <span class="s1">&#39;sluzby:sestava-kategorie-zaloh&#39;</span><span class="p">,</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>                 <span class="n">query_params</span><span class="o">=</span><span class="n">query</span><span class="p">),</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    <span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Sestava definice záloh&#39;</span><span class="p">,</span> <span class="s1">&#39;sluzby:sestava-zalohy-definice&#39;</span><span class="p">,</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>                 <span class="n">query_params</span><span class="o">=</span><span class="n">query</span><span class="p">),</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>    <span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Sestava platby záloh&#39;</span><span class="p">,</span> <span class="s1">&#39;sluzby:sestava-zalohy-platby&#39;</span><span class="p">,</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>                 <span class="n">query_params</span><span class="o">=</span><span class="n">query</span><span class="p">),</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>    <span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Sestava odečty&#39;</span><span class="p">,</span> <span class="s1">&#39;sluzby:sestava-odecty&#39;</span><span class="p">,</span> <span class="n">query_params</span><span class="o">=</span><span class="n">query</span><span class="p">),</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>    <span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Sestava faktury&#39;</span><span class="p">,</span> <span class="s1">&#39;sluzby:sestava-faktury&#39;</span><span class="p">,</span> <span class="n">query_params</span><span class="o">=</span><span class="n">query</span><span class="p">),</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>    <span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Sestava vlastníci&#39;</span><span class="p">,</span> <span class="s1">&#39;byty:sestava-byty-vlastnici&#39;</span><span class="p">,</span> <span class="n">query_params</span><span class="o">=</span><span class="n">query</span><span class="p">),</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>    <span class="n">LinkMenuItem</span><span class="p">(</span><span class="s1">&#39;Sestava nájemníci&#39;</span><span class="p">,</span> <span class="s1">&#39;byty:sestava-byty-najemnici&#39;</span><span class="p">,</span> <span class="n">query_params</span><span class="o">=</span><span class="n">query</span><span class="p">),</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="p">)</span>
+</span></code></pre></div>
+<ol>
+<li>The <code>collapse_id</code>. Must match with the <code>collapse_id</code> of the toggle button.</li>
+</ol>
+<h2 id="creating-a-custom-menu-item">Creating a custom menu item</h2>
+<p>The <code>MenuItem</code> class has an empty function called <code>html</code> that needs to be implemented in the concrete classes. The function is responsible for rendering the menu item.</p>
+<p>As an example, let's take the spacer menu item. It is a simple menu item that renders a number of <code>&lt;br&gt;</code> tags.</p>
+<div class="language-Python highlight"><span class="filename">The spacer menu item implementation</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">class</span> <span class="nc">SpacerMenuItem</span><span class="p">(</span><span class="n">MenuItem</span><span class="p">):</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">units</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">enabled</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">enabled</span><span class="p">)</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">units</span> <span class="o">=</span> <span class="n">units</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    <span class="k">def</span> <span class="nf">html</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>        <span class="k">return</span> <span class="s1">&#39;&lt;br&gt;&#39;</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span>
+</span></code></pre></div>
+<p>Because the <code>extra_css</code> argument in the <code>MenuItem</code> class default to <code>None</code>, we only need to pass in the <code>enabled</code> parameter if we wish to be able to control that from the <code>SpacerMenuItem</code> class. If our custom menu item for whatever reason was never going to be disabled, we could omit the <code>enabled</code> parameter altogether and just call the parent constructor with <code>super().__init__()</code>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: View menu">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                View menu
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../examples/" class="md-footer__link md-footer__link--next" aria-label="Next: Examples">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Examples
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "navigation.instant", "content.action.edit", "search.suggest", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>
